@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD - Beer On The Table</title>
+    <link rel="stylesheet" href="/static/estilo.css" />
+</head>
+<body>
+    {% include 'header.html' %}
+    
+    {% if sucesso %}
+
+    <div class="bloco removido">
+        <p>
+            Compra realizada com sucesso!
+        </p>
+    </div>
+
+    <div class="bloco">
+        <a href="/read" class="botao">Visualizar todos os registros</a>
+    </div>
+
+    {% elif registro %}
+
+              
+
+    <div class="bloco">
+        <p class="certeza">
+            <form class = "form" method = "POST"> 
+                O produto é <span class="novo_id">{{ registro.nome }}</span>
+                <br />
+                <br/>
+                    <div>
+                    <label for="quantidade">Digite a quantidade que deseja comprar</label>
+                    <input type="number" name="quantidade" id="quantidade">
+                    <input type="submit" class="botao" value="Comprar" />
+                    <a href="/read" class="botao">Cancelar</a>
+                </div>
+            </form>
+        </p>
+    </div>
+
+    {% else %}
+
+    <div class="bloco removido">
+        <p>
+            NENHUM REGISTRO ENCONTRADO! <br /><br /> VALOR INVÁLIDO DE ID!
+        </p>
+    </div>
+
+    <div class="bloco">
+        <a href="/read" class="botao">Visualizar todos os registros</a>
+    </div>
+
+    {% endif %}
+
+</body>
+</html>

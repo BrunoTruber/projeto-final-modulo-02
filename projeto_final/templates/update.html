@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD - Beer On The Table</title>
+    <link rel="stylesheet" href="/static/estilo.css" />
+</head>
+<body>
+    {% include 'header.html' %}
+    
+    {% if not sucesso %}
+
+    <div class="bloco">
+        <h2> Editar registro <span class="novo_id">{{ registro.id }}</span> </h2>
+    </div>
+
+    <div class="bloco">
+        <form class="form" method="POST">
+            <div class="bloco form_input">
+                <label for="nome">Nome: </label>
+                <input type="text" id="nome" name="nome" value="{{ registro.nome }}">
+            </div>
+
+            <div class="bloco form_input">
+                <label for="imagem_url">URL da imagem: </label>
+                <input type="text" id="imagem_url" name="imagem_url" value="{{ registro.imagem_url }}">
+            </div>
+            <div class="bloco form_input">
+                <label for="estoque">Quantidade</label>
+                <input type="text" id="estoque" name="estoque" value="{{ registro.estoque }}">
+            </div>
+            <div class="bloco form_input">
+                <label for="preco">Preço</label>
+                <input type="text" id="preco" name="preco" value="{{ registro.preco }}">
+            </div>
+            
+            <div class="bloco form_input">
+                <input type="submit" class="botao" value="Enviar">
+            </div>
+
+            <div class="bloco">
+                <a href="/read" class="botao">Voltar</a>
+            </div>
+            
+        </form>
+    </div>
+
+    {% else %}
+
+    <div class="bloco sucesso">
+        <p>
+            Registro editado com sucesso!
+        </p>
+    </div>
+
+    <div class="bloco">
+        <a href="/read/{{ registro.id }}" class="botao">Visualizar atualização</a>
+    </div>
+
+    {% endif %}
+
+</body>
+</html>

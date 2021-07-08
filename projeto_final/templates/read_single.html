@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD - Beer On The Table</title>
+    <link rel="stylesheet" href="/static/estilo.css" />
+</head>
+<body>
+    {% include 'header.html' %}
+    
+    <div class="bloco">
+        <h2> {{ registro.nome }}</h2>
+    </div>
+
+    <div class="bloco">
+        <img src="{{ registro.imagem_url }}" alt="{{ registro.nome }}" id="imagemSingle" />
+    </div>
+
+    <div class="bloco">
+        <a href="/read" class="botao">Voltar</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD - Beer On The Table</title>
+    <link rel="stylesheet" href="/static/estilo.css" />
+</head>
+<body>
+    {% include 'header.html' %}
+    
+    <div class="bloco">
+        <h2> Criar registros </h2>
+    </div>
+
+
+    {% if not novo_id %}
+
+    <div class="bloco">
+        <form class="form" method="POST">
+            <div class="bloco form_input">
+                <label for="nome">Nome: </label>
+                <input type="text" id="nome" name="nome">
+            </div>
+            <div class="bloco form_input">
+                <label for="imagem_url">URL da imagem: </label>
+                <input type="text" id="imagem_url" name="imagem_url">
+            </div>
+            <div class="bloco form_input">
+                <label for="estoque">Quantidade </label>
+                <input type="text" id="estoque" name="estoque">
+            </div>
+            <div class="bloco form_input">
+                <label for="preco">Preço</label>
+                <input type="text" id="preco" name="preco">
+            </div>
+            
+            <div class="bloco form_input">
+                <input type="submit" class="botao" value="Enviar">
+            </div>
+            
+        </form>
+    </div>
+
+    {% else %}
+
+    <div class="bloco">
+        <p>
+            Registro criado com sucesso!<br /><br />
+            O ID atribuído foi <span class="novo_id">{{ novo_id }}</span><br /><br />
+            <a href="/read/{{ novo_id }}" class="botao">Visualizar esse registro</a>
+        </p>
+    </div>
+
+    {% endif %}
+
+</body>
+</html>

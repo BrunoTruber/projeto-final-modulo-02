@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beer On The Table</title>
+    <link rel="stylesheet" href="/static/estilo.css" />
+    <link rel="shortcut icon" type="image/x-gif" href="/static/giphy.gif"> 
+</head>
+
+<body>
+    <div class="one"></div>
+    {% include 'header.html' %}
+    <div class="bloco">
+        {% for registro in registros %}
+        <tr>
+            <td><img src=" {{ registro['imagem_url'] }}" alt="{{ registro['nome'] }}" width="150" height="200" />
+            </tr>
+    
+        {% endfor %}
+        <h2>Temos um total de <span class="novo_id">{{ total }}</span> opções de bebidas</h2>
+
+
+    </div>
+    <div>
+        {% for registro in registros %}
+
+            <tr>
+               
+                <td>{{ registro["nome"] }}</td>
+                <td><img src=" {{ registro['imagem_url'] }}" alt="{{ registro['nome'] }}" width="150" height="200" /></td>
+               
+              
+            </tr>
+
+        {% endfor %}
+    </div>
+</body>
+</html>

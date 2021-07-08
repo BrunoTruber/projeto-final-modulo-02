@@ -1,0 +1,143 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+body {
+    background: #D2691E;
+    font-family: "Montserrat", sans-serif;
+    margin: 0;
+}
+
+.header{
+    padding-top: 20px;
+    margin-top: 5px;
+    background: #FFFFFF;
+}
+
+.bloco{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    /* color:  */
+}
+
+.botao{
+    background-color:#A52A2A;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    display: inline-block;
+    padding: 20px;
+    margin: 10px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.796);
+}
+
+@keyframes bounce {
+    0%, 20%, 60%, 100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    40% {
+        -webkit-transform: translateY(-20px);
+        transform: translateY(-20px);
+    }
+    80% {
+        -webkit-transform: translateY(-10px);
+        transform: translateY(-10px);
+
+    }
+}
+
+.botao:hover{
+    background-color: #800000;
+    transition: 0.25s;
+    animation: bounce 1s;
+}
+
+.tabela{
+    border: 1px solid #adadad;
+    border-spacing: 0;
+    margin: 0 50px 20px;
+    width: 100%;
+}
+
+.tabela tr:nth-child(even) td{
+    background-color: #F5DEB3;
+}
+
+.tabela td{
+    padding: 10px;
+}
+
+.tabela_header td{
+    font-weight: bold;
+}
+
+#imagemSingle{
+    max-height: 400px;
+}
+
+.form{
+    width: 600px;
+}
+
+.form_input{
+    align-items: center;
+    justify-content: space-between;
+}
+
+.form_input label{
+    font-weight: bold;
+    padding-right: 10px;
+}
+
+.form_input input[type=text]{
+    width: 450px;
+    padding: 6px;
+    margin: 6px 0;
+    display: inline-block;
+    border-radius: 4px;
+    border: 1px solid #CCCCCC;
+    box-sizing: border-box;
+}
+
+.form_input input[type=submit]{
+    width: 100%;
+}
+
+.novo_id{
+    background:#A52A2A;
+    border-radius: 5px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 5px 20px;
+}
+
+.sucesso{
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    border-radius: 4px;
+    color: #155724;
+    margin: 0 50px;
+}
+
+.removido{
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    border-radius: 4px;
+    color: #721c24;
+    margin: 0 50px;
+}
+
+.certeza{
+    font-size: 14px;
+}
+
+title {
+    color: salmon;
+
+
+}

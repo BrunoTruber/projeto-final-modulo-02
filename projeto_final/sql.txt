@@ -1,0 +1,26 @@
+CREATE TABLE cervejas (
+    id SERIAL PRIMARY KEY,
+    nome VARCHAR(255) NOT NULL,
+    imagem_url VARCHAR(255) NOT NULL,
+    estoque INT,
+    preco DECIMAL
+);
+
+SELECT * FROM cervejas
+
+INSERT INTO cervejas (nome, imagem_url,estoque,preco)
+VALUES  ('Brahma duplo malte', 'https://www.ambev.com.br/conteudo/uploads/2021/01/brahma_brahma-duplo-malte_600ml.png',150,6.99),
+        ('Bohemia Imperial', 'https://www.ambev.com.br/conteudo/uploads/2019/03/bohemia-imperial_550ml.png',100,17.99),
+        ('Antarctica', 'https://www.ambev.com.br/conteudo/uploads/2019/03/antarctica_1l.png',150,6.59),
+        ('Becks', 'https://www.ambev.com.br/conteudo/uploads/2019/03/becks_330ml.png',300,4.29),
+		('Original','https://www.ambev.com.br/conteudo/uploads/2019/03/original_600ml.png',190,7.00),
+		('Skol Pilsen', 'https://www.ambev.com.br/conteudo/uploads/2019/03/skol_1l.png',200,6.50),
+        ('Stella Artois', 'https://www.ambev.com.br/conteudo/uploads/2019/03/bohemia-imperial_550ml.png',100,17.99),
+        ('Belgian Witte', 'https://www.ambev.com.br/conteudo/uploads/2019/04/wals_belgian-witte_600ml.png',200,11.85),
+        ('Serramalte', 'https://www.ambev.com.br/conteudo/uploads/2019/03/serramalte_600ml.png',250,9.29),
+		('Heineken','https://static.paodeacucar.com/img/uploads/1/400/12150400.jpg',190,7.00),
+		('Budweiser','https://static.paodeacucar.com/img/uploads/1/741/12056741.jpeg',500,7.00);
+
+SELECT * FROM cervejas ORDER BY id ASC
+
+DROP TABLE cervejas 

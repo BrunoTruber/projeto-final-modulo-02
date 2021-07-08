@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD - Beer On The Table</title>
+    <link rel="stylesheet" href="/static/estilo.css" />
+</head>
+<body>
+    {% include 'header.html' %}
+    
+    <div class="bloco">
+        <h2>Visualizar todos os registros</h2>
+    </div>
+
+    <div class="bloco">
+        <table class="tabela">
+            <tr class="tabela_header">
+                <td>ID</td>
+                <td>Nome</td>
+                <td>Imagem</td>
+                <td>Estoque</td>
+                <td>Preço</td>
+                <td>Ações</td>
+            </tr>
+
+            {% for registro in registros %}
+
+            <tr>
+                <td>{{ registro["id"] }}</td>
+                <td>{{ registro["nome"] }}</td>
+                <td><img src=" {{ registro['imagem_url'] }}" alt="{{ registro['nome'] }}" width="150" height="200" /></td>
+                <td>{{ registro["estoque"] }}</td>
+                <td>R$ {{ registro["preco"] }}</td>
+                <td>
+                    <a href="/read/{{ registro['id'] }}" class="botao">Visualizar</a>
+                    <!-- <a href="/update/{{ registro['id'] }}" class="botao">Editar</a> -->
+                    <a href="/carrinho/{{ registro['id'] }}" class="botao">Comprar</a>
+                </td>
+            </tr>
+
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>
